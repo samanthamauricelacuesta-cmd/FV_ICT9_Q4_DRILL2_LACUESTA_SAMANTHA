@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 DRILL2</title>
+</head>
+<body>
+    <center>
+    <h1>switch statement</h1>
+    <button class="btn btn-info" onclick="teamrank()">Rank</button>
+    <script>
+    function teamrank(){
+        var rank = "1st";//string
+
+        switch(true){
+            case (rank === "1st"):
+                message = ("RED CHAMPION!");
+                break;
+            case (rank === "2nd"):
+                message = ("u aint us!");
+                break;
+            case (rank === "3rd"):
+                message = ("ur meh!");
+                break;
+            case (rank === "4th"):
+                message = ("ur bad!");
+                break;
+            default:
+                message = ("ur team is trash");
+                break;
+        }
+        alert(message);
+    }
+
+
+        let team = "Red";
+
+        switch(team){
+            case "Red" :
+                alert("Go Red Bulldogs!");
+                break;
+            case "Blue" :
+                alert("Go Bluebears!");
+                break;
+            case "Green" :
+                alert("Go Greenhornets!");
+                break;
+            case "Yellow" :
+                alert("Go Yellowtigers!");
+                break;
+            default:
+                alert("Team could not be found");
+        }
+    </script>
+    </center>
+</body>
+</html>
