@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q4 DRILL2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heat Index Checker</title>
 </head>
-<body>
-    <center>
-    <h1>Heat Index Checker</h1>
-    <button class="btn btn-info" onclick="CheckHeat()">Check</button>
-    <script>
-    function teamrank(){
-        var rank = "1st";//string
 
-        switch(true){
-            case (rank === "1st"):
-                message = ("RED CHAMPION!");
-                break;
-            case (rank === "2nd"):
-                message = ("u aint us!");
-                break;
-            case (rank === "3rd"):
-                message = ("ur meh!");
-                break;
-            case (rank === "4th"):
-                message = ("ur bad!");
-                break;
-            default:
-                message = ("ur team is trash");
-                break;
-        }
-        alert(message);
+<body>
+
+<center>
+
+<h1>Heat Index Checker</h1>
+
+Temperature:
+<input type="number" id="temp"><br><br>
+
+Humidity:
+<input type="number" id="hum"><br><br>
+
+<button onclick="checkHeat()">Check Heat Index</button>
+
+<script>
+
+function checkHeat(){
+
+    let temp = parseInt(document.getElementById("temp").value);
+    let hum = parseInt(document.getElementById("hum").value);
+    let message;
+
+    switch(true){
+
+        case (temp>=20 && temp<=24 && hum>=30 && hum<=50):
+            message = "Comfortable / Cool";
+            break;
+
+        case (temp>=25 && temp<=27 && hum>=40 && hum<=60):
+            message = "Warm";
+            break;
+
+        case (temp>=28 && temp<=31 && hum>=50 && hum<=70):
+            message = "Hot";
+            break;
+
+        case (temp>=32 && temp<=35 && hum>=60 && hum<=80):
+            message = "Very Hot / Caution";
+            break;
+
+        case (temp>=36 && hum>=70):
+            message = "Extreme Heat / Danger";
+            break;
+
+        default:
+            message = "Conditions not in the table";
     }
 
+    alert(message);
+}
 
-        let team = "Red";
+</script>
 
-        switch(team){
-            case "Red" :
-                alert("Go Red Bulldogs!");
-                break;
-            case "Blue" :
-                alert("Go Bluebears!");
-                break;
-            case "Green" :
-                alert("Go Greenhornets!");
-                break;
-            case "Yellow" :
-                alert("Go Yellowtigers!");
-                break;
-            default:
-                alert("Team could not be found");
-        }
-    </script>
-    </center>
+</center>
+
 </body>
 </html>
